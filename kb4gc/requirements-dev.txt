@@ -2,6 +2,7 @@ coverage
 flake8
 ipdb
 ipython
+mypy
 pre-commit
 pytest
 requirements-tools
