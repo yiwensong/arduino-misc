@@ -19,7 +19,7 @@ with open('README.md', 'r') as readme:
         packages=setuptools.find_packages(exclude=['tests*']),
         install_requires=[
             'jinja2',
-            'pygpio',
+            'pigpio',
             'pyyaml',
         ],
         classifiers=[
