@@ -17,7 +17,9 @@ with open('README.md', 'r') as readme:
         long_description=README_TEXT,
         long_description_content_type='text/markdown',
         packages=setuptools.find_packages(exclude=['tests*']),
-        install_requires=[],
+        install_requires=[
+            'pyyaml',
+        ],
         classifiers=[
             'Natural Language :: English',
             'Programming Language :: Python :: 3.7',

@@ -1,0 +1,7 @@
+coverage
+flake8
+ipdb
+ipython
+pre-commit
+pytest
+requirements-tools
