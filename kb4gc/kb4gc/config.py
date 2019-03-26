@@ -24,7 +24,12 @@ def load_config(config_file: str) -> typing.Dict:
     """Reads the config file and creates a dictionary output."""
     config = yaml.safe_load(config_file)
 
-    for check in ('mapping', 'wiring', 'values'):
+    for check in (
+            'mapping',
+            'wiring',
+            'values',
+            'hardware',
+    ):
         if check not in config:
             raise InvalidConfigException(
                 check,
