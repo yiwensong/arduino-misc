@@ -51,6 +51,13 @@ values:
   y2v: 55
   y3v: 73
 
+hardware:
+  # Which stream is the keyboard
+  keyboard: /dev/input/event0
+
+  # Which pin the gamecube output should be
+  gc_output: 8
+
 wiring:
   # This maps Pi GPIO to arduino inputs
   4: 22

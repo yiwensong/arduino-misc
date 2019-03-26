@@ -1,7 +1,7 @@
 #include "Nintendo.h"
 
 // Defines a "Gamecube Console" sending data to the console on pin 8
-CGamecubeConsole GamecubeConsole(8);
+CGamecubeConsole GamecubeConsole( {$ gc_output $} );
 // Structure for data to be sent to console
 Gamecube_Data_t d = defaultGamecubeData;
 
@@ -9,27 +9,27 @@ Gamecube_Data_t d = defaultGamecubeData;
 CGamecubeController GamecubeController1(7);
 
 // Pinouts
-const int A         = {% a %};
-const int B         = {% b %};
-const int X         = {% x %};
-const int Y         = {% y %};
-const int Z         = {% z %};
-const int START     = {% start %};
-const int R         = {% r %};
-const int L         = {% l %};
-const int LEFT      = {% left %};
-const int RIGHT     = {% right %};
-const int UP        = {% up %};
-const int DOWN      = {% down %};
-const int X1        = {% x1 %};
-const int X2        = {% x2 %};
-const int Y1        = {% y1 %};
-const int Y2        = {% y2 %};
-const int CLEFT     = {% cleft %};
-const int CRIGHT    = {% cright %};
-const int CUP       = {% cup %};
-const int CDOWN     = {% cdown %};
-const int SWITCH    = {% switch_ %};
+const int A         = {$ a $};
+const int B         = {$ b $};
+const int X         = {$ x $};
+const int Y         = {$ y $};
+const int Z         = {$ z $};
+const int START     = {$ start $};
+const int R         = {$ r $};
+const int L         = {$ l $};
+const int LEFT      = {$ left $};
+const int RIGHT     = {$ right $};
+const int UP        = {$ up $};
+const int DOWN      = {$ down $};
+const int X1        = {$ x1 $};
+const int X2        = {$ x2 $};
+const int Y1        = {$ y1 $};
+const int Y2        = {$ y2 $};
+const int CLEFT     = {$ cleft $};
+const int CRIGHT    = {$ cright $};
+const int CUP       = {$ cup $};
+const int CDOWN     = {$ cdown $};
+const int SWITCH    = {$ switch_ $};
 
 // Analog tilt modifiers
 const int X1v = {$ x1v $};

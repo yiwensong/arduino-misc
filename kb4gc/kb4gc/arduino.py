@@ -49,7 +49,10 @@ def create_hardware_map(
         )
     arduino_mapping: ArduinoMap = {}
     pi_mapping: PiMap = {}
-    for gc_button, keyname, gpio, ardpin in zip(*mapping, *wiring):
+    for gc_button, keyname, gpio, ardpin in zip(
+            *list(mapping.items()),
+            *list(wiring.items()),
+    ):
         keycode = keyboard.KEY_CODES_MAP[keyname]
         arduino_mapping[gc_button] = ardpin
         pi_mapping[keycode] = gpio
@@ -59,13 +62,17 @@ def create_hardware_map(
 def create_arduino_sketch(
         values: typing.Dict[str, int],
         hardware_map: ArduinoMap,
+        gc_output_port: int,
 ) -> str:
     """Creates the arduino sketch file from a yaml config file."""
     # Create a safe loading dict with only the requisite values
-    values = {
-        values.get(k, v)
+    safe_values = {
+        k: values.get(k, v)
         for k, v
         in DEFAULT_VALUES.items()
     }
-
-    return ENV.get_template('kb4gc.ino').render(**values, **hardware_map)
+    return ENV.get_template('kb4gc.ino').render(
+        gc_output=gc_output_port,
+        **safe_values,
+        **hardware_map,
+    )

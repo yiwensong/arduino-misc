@@ -18,6 +18,7 @@ with open('README.md', 'r') as readme:
         long_description_content_type='text/markdown',
         packages=setuptools.find_packages(exclude=['tests*']),
         install_requires=[
+            'evdev',
             'jinja2',
             'pigpio',
             'pyyaml',
