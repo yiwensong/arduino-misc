@@ -22,11 +22,11 @@ class InvalidConfigException(Exception):
 
 def load_config(config_file: str) -> typing.Dict:
     """Reads the config file and creates a dictionary output."""
-    config = yaml.safe_load(config_file)
+    with open(config_file, 'r') as cfg_fd:
+        config = yaml.safe_load(cfg_fd)
 
     for check in (
             'mapping',
-            'wiring',
             'values',
             'hardware',
     ):
@@ -35,4 +35,8 @@ def load_config(config_file: str) -> typing.Dict:
                 check,
                 config_file,
             )
+    config['mapping'] = {
+        k: str(v)
+        for k, v in config['mapping'].items()
+    }
     return config

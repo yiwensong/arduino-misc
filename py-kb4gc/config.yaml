@@ -10,8 +10,9 @@ mapping:
 
   # Bumpers
   l: R
-  r: 7
-  z: 8
+  r: '7'
+  z: '8'
+  rlight: '9'
 
   # Control Stick
   up: W
@@ -30,10 +31,10 @@ mapping:
   cright: DOT
 
   # D Pad
-  dleft: Z
-  dup: X
-  ddown: C
-  dright: V
+  x1: Z
+  y1: X
+  x2: C
+  y2: V
 
   # Start button
   start: ENTER
@@ -52,32 +53,5 @@ values:
   y3v: 73
 
 hardware:
-  # Which stream is the keyboard
-  keyboard: /dev/input/event0
-
   # Which pin the gamecube output should be
   gc_output: 8
-
-wiring:
-  # This maps Pi GPIO to arduino inputs
-  4: 22
-  5: 24
-  6: 26
-  7: 28
-  8: 30
-  9: 31
-  10: 34
-  11: 35
-  12: 38
-  13: 39
-  14: 40
-  15: 41
-  16: 44
-  17: 45
-  18: 46
-  19: 47
-  20: 48
-  21: 49
-  22: 50
-  23: 51
-  24: 12
